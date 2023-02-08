@@ -18,14 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('events', function () {});
-// Route::get('events/create', function () {});
-// Route::post('events', function () {});
-// Route::get('events/{event_id}', function () {});
-// Route::get('events/{event_id}/edit', function () {});
-// Route::put('events/{event_id}', function () {});
-// Route::delete('events/{event_id}', function () {});
-
 Route::controller(EventController::class)->group(function () {
     Route::get('events', 'index');
     Route::get('events/create', 'create');
