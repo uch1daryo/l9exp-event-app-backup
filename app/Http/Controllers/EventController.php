@@ -58,6 +58,12 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $event = Event::find($id);
+        $event->room_id = $request->input('room_id');
+        $event->user_id = $request->input('user_id');
+        $event->start_at = $request->input('start_at');
+        $event->end_at = $request->input('end_at');
+        $event->save();
     }
 
     /**
