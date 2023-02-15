@@ -15,7 +15,7 @@ class RoomFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
+            'name' => $this->faker->unique()->numerify('第 %% 会議室'),
             'fee_per_hour' => $this->faker->numberBetween(500, 2000),
         ];
     }
